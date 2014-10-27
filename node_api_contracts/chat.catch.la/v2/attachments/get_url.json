@@ -1,0 +1,82 @@
+{
+  "request": {
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+      "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+    },
+    "http_method": "post",
+    "path": "/v2/attachments/get_url",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/attachments/get_url with shasum 84cd34e8166875620c73e37e621b36d374e31fc8",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "key": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/attachments/get_url with shasum 4a18ba982e5e8abfb1bab46a852c23ea069bd753",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "attachment": {
+          "type": "string",
+          "required": true
+        },
+        "urls": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "post",
+        "uri": "https://chat.catch.la:443/v2/attachments/get_url",
+        "headers": {
+          "User-Agent": "Faraday v0.9.0",
+          "Content-Type": "application/json",
+          "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        },
+        "body": "{\"key\":\"ruanwztest2\"}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Mon, 27 Oct 2014 06:36:50 GMT",
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "663",
+          "Connection": "keep-alive",
+          "X-Powered-By": "Sails <sailsjs.org>",
+          "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+        },
+        "body": "{\"attachment\":\"http://catch.qiniudn.com/ruanwztest2?e=1416983811&token=YSMhpYfzim6GOG-_sqsm3C0CpWI7RAPeq5IxjHeD:RhyxOBcSP1WG6EA9i9qsAfeQ6Xw=\",\"urls\":[\"http://catch.qiniudn.com/ruanwztest2?e=1416983811&token=YSMhpYfzim6GOG-_sqsm3C0CpWI7RAPeq5IxjHeD:RhyxOBcSP1WG6EA9i9qsAfeQ6Xw=\",\"http://catch.u.qiniudn.com/ruanwztest2?e=1416983811&token=YSMhpYfzim6GOG-_sqsm3C0CpWI7RAPeq5IxjHeD:4EdJUjLtwnPvzAAWgRxSIjlNyxE=\",\"http://catch.dn.qbox.me/ruanwztest2?e=1416983811&token=YSMhpYfzim6GOG-_sqsm3C0CpWI7RAPeq5IxjHeD:oJsvuEyn3f4_omslxEh9BjHsnqk=\",\"http://catch.qiniug.com/ruanwztest2?e=1416983811&token=YSMhpYfzim6GOG-_sqsm3C0CpWI7RAPeq5IxjHeD:FKjrOnH9C6gwbSap9Wl3FKRfqAs=\"]}"
+      }
+    }
+  },
+  "name": "/v2/attachments/get_url"
+}

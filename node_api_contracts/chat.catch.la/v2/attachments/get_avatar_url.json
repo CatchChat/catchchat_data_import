@@ -1,0 +1,72 @@
+{
+  "request": {
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+      "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+    },
+    "http_method": "post",
+    "path": "/v2/attachments/get_avatar_url",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/attachments/get_avatar_url with shasum 84cd34e8166875620c73e37e621b36d374e31fc8",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "key": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/attachments/get_avatar_url with shasum e2990090d0016d6f486eff2e903afb12a50c4938",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "attachment": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "post",
+        "uri": "https://chat.catch.la:443/v2/attachments/get_avatar_url",
+        "headers": {
+          "User-Agent": "Faraday v0.9.0",
+          "Content-Type": "application/json",
+          "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        },
+        "body": "{\"key\":\"ruanwztest2\"}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Mon, 27 Oct 2014 06:36:48 GMT",
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "61",
+          "Connection": "keep-alive",
+          "X-Powered-By": "Sails <sailsjs.org>",
+          "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+        },
+        "body": "{\"attachment\":\"http://catch-avatars.qiniudn.com/ruanwztest2\"}"
+      }
+    }
+  },
+  "name": "/v2/attachments/get_avatar_url"
+}

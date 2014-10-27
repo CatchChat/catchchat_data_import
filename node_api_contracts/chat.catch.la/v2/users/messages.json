@@ -1,0 +1,129 @@
+{
+  "request": {
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+      "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+    },
+    "http_method": "post",
+    "path": "/v2/users/messages"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/users/messages with shasum 3dbfe36ffa54f5ce516af90f8d58d188e0492155",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "status": {
+          "type": "string",
+          "required": true
+        },
+        "messages": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_id": {
+                "type": "string",
+                "required": true
+              },
+              "attachment": {
+                "type": "string",
+                "required": true
+              },
+              "from_nickname": {
+                "type": "string",
+                "required": true
+              },
+              "from_avatar": {
+                "type": "string",
+                "required": true
+              },
+              "from_username": {
+                "type": "string",
+                "required": true
+              },
+              "from_id": {
+                "type": "string",
+                "required": true
+              },
+              "type": {
+                "type": "string",
+                "required": true
+              },
+              "latitude": {
+                "type": "number",
+                "required": true
+              },
+              "longitude": {
+                "type": "number",
+                "required": true
+              },
+              "message": {
+                "type": "string",
+                "required": true
+              },
+              "to_id": {
+                "type": "string",
+                "required": true
+              },
+              "battery_level": {
+                "type": "number",
+                "required": true
+              },
+              "created_at": {
+                "type": "string",
+                "required": true
+              },
+              "read": {
+                "type": "boolean",
+                "required": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "post",
+        "uri": "https://chat.catch.la:443/v2/users/messages",
+        "headers": {
+          "User-Agent": "Faraday v0.9.0",
+          "Content-Type": "application/json",
+          "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+          "Content-Length": "0",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        },
+        "body": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Mon, 27 Oct 2014 06:57:24 GMT",
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "608",
+          "Connection": "keep-alive",
+          "X-Powered-By": "Sails <sailsjs.org>",
+          "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+        },
+        "body": "{\"status\":\"true\",\"messages\":[{\"_id\":\"544dec89b9421c14538a35b9\",\"attachment\":\"http://catch.qiniudn.com/catchchat_1414392969456.jpg.jpg?e=1416984969&token=YSMhpYfzim6GOG-_sqsm3C0CpWI7RAPeq5IxjHeD:et45XiX7iNUCiZiTaFLNQPlklpw=\",\"from_nickname\":\"ruanwzcn\",\"from_avatar\":\"http://catch-avatars.qiniudn.com/attachments/2014-8-29/3jWGVRI3LDT0ufYgRQwx\",\"from_username\":\"ruanwzcn\",\"from_id\":\"542919dd26beba301a227534\",\"type\":\"image\",\"latitude\":31.24357744,\"longitude\":121.39318501,\"message\":\"\",\"to_id\":\"542a22ae4b44684f2ecb2398\",\"battery_level\":0.5799999833106995,\"created_at\":\"2014-10-27T06:56:09.121Z\",\"read\":false}]}"
+      }
+    }
+  },
+  "name": "/v2/users/messages"
+}

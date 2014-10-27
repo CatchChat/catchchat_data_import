@@ -1,0 +1,114 @@
+{
+  "request": {
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+      "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+    },
+    "http_method": "post",
+    "path": "/v2/users/batch_query",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/users/batch_query with shasum 83c0e0ce4edcce7ddbcd538aa81e65640e965b36",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "users": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/users/batch_query with shasum 8c9fe630c591b9e1b369f8b5be44c5e1ed04a304",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "status": {
+          "type": "string",
+          "required": true
+        },
+        "users": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_id": {
+                "type": "string",
+                "required": true
+              },
+              "username": {
+                "type": "string",
+                "required": true
+              },
+              "avatar": {
+                "type": "string",
+                "required": true
+              },
+              "nickname": {
+                "type": "string",
+                "required": true
+              },
+              "phone_number": {
+                "type": "integer",
+                "required": true
+              },
+              "created_at": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "post",
+        "uri": "https://chat.catch.la:443/v2/users/batch_query",
+        "headers": {
+          "User-Agent": "Faraday v0.9.0",
+          "Content-Type": "application/json",
+          "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        },
+        "body": "{\"users\":[\"542919dd26beba301a227534\"]}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Mon, 27 Oct 2014 06:36:47 GMT",
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "260",
+          "Connection": "keep-alive",
+          "X-Powered-By": "Sails <sailsjs.org>",
+          "Vary": "X-HTTP-Method-Override, Accept-Encoding"
+        },
+        "body": "{\"status\":\"true\",\"users\":[{\"_id\":\"542919dd26beba301a227534\",\"username\":\"ruanwzcn\",\"avatar\":\"http://catch-avatars.qiniudn.com/attachments/2014-8-29/3jWGVRI3LDT0ufYgRQwx\",\"nickname\":\"ruanwzcn\",\"phone_number\":13072121709,\"created_at\":\"2014-09-29T08:35:41.319Z\"}]}"
+      }
+    }
+  },
+  "name": "/v2/users/batch_query"
+}

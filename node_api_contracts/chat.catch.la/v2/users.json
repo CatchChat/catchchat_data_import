@@ -1,0 +1,62 @@
+{
+  "request": {
+    "headers": {
+      "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+    },
+    "http_method": "get",
+    "params": {
+      "user_id": "ruanwz"
+    },
+    "path": "/v2/users"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Etag": "W/\"12-3782936279\"",
+      "Vary": "Accept-Encoding"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from https://chat.catch.la/v2/users?user_id=ruanwz with shasum 705c46a4b9a41a6347f4067f9ac1df4dae24cd77",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "status": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "get",
+        "uri": "https://chat.catch.la:443/v2/users?user_id=ruanwz",
+        "headers": {
+          "User-Agent": "Faraday v0.9.0",
+          "Content-Type": "application/json",
+          "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Mon, 27 Oct 2014 06:36:46 GMT",
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "18",
+          "Connection": "keep-alive",
+          "X-Powered-By": "Sails <sailsjs.org>",
+          "Etag": "W/\"12-3782936279\"",
+          "Vary": "Accept-Encoding"
+        },
+        "body": "{\"status\":\"false\"}"
+      }
+    }
+  },
+  "name": "/v2/users"
+}
