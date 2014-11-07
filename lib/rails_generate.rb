@@ -4,9 +4,7 @@ require 'faraday'
 require 'pry'
 
 require_relative 'generator_helper'
-require_relative 'attachment_contract_generator'
-require_relative 'message_contract_generator'
-require_relative 'user_contract_generator'
+require_relative 'auth_contract_generator'
 #   # Friends
 #   'POST /v2/users/friends': 'v2/Friend.list'
 #   'POST /v2/users/add_friend': 'v2/Friend.add_friend'
@@ -77,19 +75,7 @@ require_relative 'user_contract_generator'
 
 # create a new user
 
-c = UserContractGenerator.new
-c.login
-c.user_find_one # status: false
-c.user_batch_query
-#c.create_user
-#c.check_user what parameters needed?
-
-c = MessageContractGenerator.new
-c.get_messages
-
-c = AttachmentContractGenerator.new
-c.get_avatar_url
-c.get_avatar_token
-c.get_url
-c.token
-#c.qiniu_token what request parameters needed?
+c = AuthContractGenerator.new contracts_path: 'rails_api_contracts'
+c.token_by_login
+c.token_by_mobile
+c.send_verify_code

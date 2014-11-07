@@ -1,9 +1,9 @@
 module GeneratorHelper
-  def initialize
+  def initialize(options)
     WebMock.allow_net_connect!
 
     Pacto.configure do |c|
-      c.contracts_path = 'node_api_contracts'
+      c.contracts_path = options.fetch :contracts_path
     end
 
     Pacto.generate!

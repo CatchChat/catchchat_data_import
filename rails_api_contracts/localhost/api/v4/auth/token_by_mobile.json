@@ -1,0 +1,90 @@
+{
+  "request": {
+    "headers": {
+    },
+    "http_method": "post",
+    "path": "/api/v4/auth/token_by_mobile",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from http://localhost:3000/api/v4/auth/token_by_mobile with shasum 75f7b15007188b133ce383baf27f2d0c922b1975",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "login": {
+          "type": "string",
+          "required": true
+        },
+        "password": {
+          "type": "string",
+          "required": true
+        },
+        "expiring": {
+          "type": "integer",
+          "required": false 
+        }
+      }
+    }
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Etag": "\"af8150171c093086b0ffd20d7dc04aca\"",
+      "Cache-Control": "max-age=0, private, must-revalidate"
+    },
+    "status": 200,
+    "schema": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from http://localhost:3000/api/v4/auth/token_by_mobile with shasum 0308475538cc4cfb6c3546833bcb5a07ad681c7d",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "mobile": {
+          "type": "string",
+          "required": true
+        },
+        "access_token": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "examples": {
+    "default": {
+      "request": {
+        "method": "post",
+        "uri": "http://localhost:3000/api/v4/auth/token_by_mobile",
+        "headers": {
+          "User-Agent": "Faraday v0.9.0",
+          "Content-Type": "application/json",
+          "X-Catchchatauth": "cnVhbnd6dGVzdDpydWFud3p0ZXN0",
+          "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Accept": "*/*"
+        },
+        "body": "{\"login\":\"12345678\",\"password\":\"12345\",\"expiring\":500}"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "X-Content-Type-Options": "nosniff",
+          "X-Ratelimit-Limit": "5000",
+          "X-Ratelimit-Remaining": "4990",
+          "X-Ratelimit-Reset": "3600",
+          "Content-Type": "application/json; charset=utf-8",
+          "Etag": "\"af8150171c093086b0ffd20d7dc04aca\"",
+          "Cache-Control": "max-age=0, private, must-revalidate",
+          "X-Request-Id": "65eaad1c-7c30-410f-bf46-3b47a6a01607",
+          "X-Runtime": "0.074201",
+          "Server": "WEBrick/1.3.1 (Ruby/2.1.1/2014-02-24)",
+          "Date": "Fri, 07 Nov 2014 09:20:49 GMT",
+          "Content-Length": "77",
+          "Connection": "Keep-Alive"
+        },
+        "body": "{\"mobile\":\"12345678\",\"access_token\":\"Rub4GyD73FTmzSihY7zv1415352049.2437882\"}"
+      }
+    }
+  },
+  "name": "/api/v4/auth/token_by_mobile"
+}
