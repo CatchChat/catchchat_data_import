@@ -20,7 +20,7 @@
         },
         "expiring": {
           "type": "integer",
-          "required": true
+          "required": false
         }
       }
     }
