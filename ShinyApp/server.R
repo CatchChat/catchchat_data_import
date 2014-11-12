@@ -2,8 +2,6 @@
 # ShinyMongo App
 # a simple R based MongoDB - Viewer
 # 
-# Markus Schmidberger, markus.schmidberger@comsysto.com
-# June, 2013
 
 library(shiny)
 library(rmongodb)

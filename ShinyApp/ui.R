@@ -2,8 +2,6 @@
 # ShinyMongo App
 # a simple R based MongoDB - Viewer
 # 
-# Markus Schmidberger, markus.schmidberger@comsysto.com
-# June, 2013
 
 library(shiny)
 
@@ -11,7 +9,7 @@ library(shiny)
 shinyUI(pageWithSidebar(
   
   # Application title
-  headerPanel("ShinyMongo"),
+  headerPanel("CatchChat Analysis for Data in Mongodb"),
   
   # Sidebar
   sidebarPanel(
@@ -27,8 +25,7 @@ shinyUI(pageWithSidebar(
     uiOutput("query"),
 
     br(),br(),
-    helpText("Development: markus.schmidberger@comsysto.com"),
-    helpText("more at https://github.com/comsysto/ShinyMongo")
+    helpText("more at https://github.com:CatchChat/catchchat_data_import/tree/mongodb_data_analysis")
     ),
   
   # main window
