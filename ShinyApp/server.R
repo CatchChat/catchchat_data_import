@@ -5,6 +5,7 @@
 
 library(shiny)
 library(rmongodb)
+library(rjson)
 library(RJSONIO)
 #RJSONJO gets problems with big JSON objects )-:
 
@@ -79,7 +80,8 @@ shinyServer(function(input, output) {
     
       if( !is.null(input$query) ){
         if( input$query !="" ){
-          Rquery <- fromJSON(input$query)
+          Rquery <- rjson::fromJSON(input$query)
+          print(class(Rquery))
           query <- mongo.bson.from.list(Rquery)
         } else {
           buf <- mongo.bson.buffer.create()
@@ -98,7 +100,7 @@ shinyServer(function(input, output) {
          i <- i+1
        }
        mongo.cursor.destroy(cursor)
-        json <- toJSON(res_list)
+        json <- RJSONIO::toJSON(res_list)
         json <- gsub("\\},\\{", "},<br><br>{", json)
        return( json )
       }
