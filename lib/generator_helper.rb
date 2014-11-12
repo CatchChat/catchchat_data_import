@@ -24,7 +24,8 @@ module GeneratorHelper
     conn.send method, path do |req|
       req.headers['Content-Type'] = 'application/json'
       # req.headers['X-CatchChatToken'] = encoded_auth_token
-      req.headers['X-CatchChatAuth'] = encoded_auth_password
+      # Below is only for node api
+      # req.headers['X-CatchChatAuth'] = encoded_auth_password
       req.body = body if method == :post
     end
   end
