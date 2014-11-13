@@ -9,7 +9,7 @@ describe 'rails api auth contract' do
     WebMock.allow_net_connect!
   end
 
-  it 'validate contracts' do
+  it 'validate auth contracts' do
     contracts = Pacto.load_contracts('rails_api_contracts/localhost/api/v4/auth', 'http://localhost:3000')
     result = contracts.simulate_consumers
     result.entries.each do |entry|

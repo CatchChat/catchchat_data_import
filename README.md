@@ -28,3 +28,19 @@ bundle exec pacto-server -sv --contracts_dir node_api_contracts --port 9000 --li
 bundle exec pacto-server -sv --contracts_dir node_api_contracts --port 9000 --generate --live https://chat.catch.la
 ```
 
+## API description
+### Before
+rake db:seed
+
+### Auth
+Contracts can be generated and verified
+
+### Register
+Contracts can only be generated, but can't be verified, because there can't be
+duplicated username, mobile
+
+To generate registration/update contract, must first run following in console:
+
+```
+SmsVerificationCode.create user_id: xx, mobile: "10045678901", expired_at: Time.now+3600, active: true
+```

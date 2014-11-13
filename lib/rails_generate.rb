@@ -80,3 +80,4 @@ c.token_by_login
 c.token_by_mobile
 c.send_verify_code
 c.register_new_user
+c.verify_user_register_sms_token

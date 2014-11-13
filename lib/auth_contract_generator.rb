@@ -32,11 +32,19 @@ class AuthContractGenerator
   end
 
   def register_new_user
-    json_data = {username: "nottooshort"+rand(10000).to_s,
+    json_data = {username: "nottooshort123",
                  password: 'abcabc123',
-                 mobile: rand(10000000).to_s
+                 mobile: "10045678901"
                 }.to_json
 
     send_request(:post, 'http://localhost:3000', '/api/v4/registration/create', json_data)
+  end
+
+  def verify_user_register_sms_token
+    json_data = {username: "nottooshort123",
+                 mobile: "10045678901",
+                 token: "345"
+                }.to_json
+    send_request(:put, 'http://localhost:3000', '/api/v4/registration/update', json_data)
   end
 end
