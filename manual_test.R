@@ -12,8 +12,30 @@ query <- mongo.bson.from.list(list(created_at= list("$gt"= as.POSIXct(start_date
 print(query)
 count <- mongo.count(mongo, "catch_chat.users", query=query)
 
-ag1 <- mongo.bson.from.JSON('{"$group":{"_id": {"ord_date": {"day": {"$dayOfMonth": "$created_at"}}}}}')
+# db.users.aggregate({$group:{_id: {"month": {$month: "$created_at"}}, count:{$sum:1}}}, {$sort:{"_id.month":1}})
+
+# db.users.aggregate({$group:{_id: {"day": {$dayOfMonth: "$created_at"},"month": {$month: "$created_at"}}, count:{$sum:1}}}, {$sort:{"_id.month":1, "_id.day":1}})
+ag1 <- mongo.bson.from.JSON('
+                            {"$group":
+                              {"_id": 
+                                {"day": {"$dayOfMonth": "$created_at"},
+                                 "month": {"$month": "$created_at"}
+                                },
+                                "count": {"$sum": 1}
+                              }
+                            } ')
+                           
+ag2 <- mongo.bson.from.JSON('
+                            {
+                              "$sort": { 
+                                "_id.month":1,
+                                "_id.day":1
+                              }
+                            }
+                            ')
 #ag1 <- mongo.bson.from.JSON('{"$group": {"_id":null, "count": {"$sum":1}}}')
 print(count)
 
-bson <- mongo.aggregation(mongo, "catch_chat.users", list(ag1))
+bson <- mongo.aggregation(mongo, "catch_chat.users", list(ag1, ag2))
+lresult <- mongo.bson.value(bson,"result")
+mresult <- sapply(result,function(x) return(c(x$'_id',x$count)))
