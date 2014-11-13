@@ -1,6 +1,7 @@
 {
   "request": {
     "headers": {
+      "Content-Type": "application/json; charset=utf-8"
     },
     "http_method": "post",
     "path": "/api/v4/auth/send_verify_code",
