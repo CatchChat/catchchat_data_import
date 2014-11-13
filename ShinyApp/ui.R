@@ -4,6 +4,7 @@
 # 
 
 library(shiny)
+library(ggplot2)
 
 # Define UI for miles per gallon application
 shinyUI(pageWithSidebar(
@@ -24,27 +25,34 @@ shinyUI(pageWithSidebar(
     
     uiOutput("query"),
 
+    dateInput(inputId = "theDate", label = "dateInput"),
+                   
+    dateRangeInput(inputId = "dateRange", label = "dateRangeInput"),
+
     br(),br(),
-    helpText("more at https://github.com:CatchChat/catchchat_data_import/tree/mongodb_data_analysis")
+    helpText("https://github.com:CatchChat/catchchat_data_import/tree/mongodb_data_analysis")
     ),
   
   # main window
   mainPanel(
-    
-    textOutput("connection"),
-    
-    conditionalPanel(
-      condition = "input.collections_input == '-'",
-      h4("Collections overview:"),
-      tableOutput("view_collections")
-    ),
-    
-    conditionalPanel(
-      condition = "input.collections_input != '-'",
-      h4(textOutput("view_head")),
-      tableOutput("view")
-    )
-    
-  )
+    tabsetPanel(
+      tabPanel("Connection", textOutput("connection")),
+      tabPanel("Collections",
+        conditionalPanel(
+          # condition = "input.collections_input == '-'",
+          h4("Collections overview:"),
+          tableOutput("view_collections")
+        )
+      ),
+      tabPanel("Raw Data",
+        conditionalPanel(
+          condition = "input.collections_input != '-'",
+          h4(textOutput("view_head")),
+          tableOutput("view")
+        )
+      ),
 
+      tabPanel("Created Time Filter","test")
+    ) 
+  )
 ))

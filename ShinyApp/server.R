@@ -7,7 +7,8 @@ library(shiny)
 library(rmongodb)
 library(rjson)
 library(RJSONIO)
-#RJSONJO gets problems with big JSON objects )-:
+library(ggplot2)
+#RJSONIO gets problems with big JSON objects )-:
 
 # parameter to set the maximum queyering and displaying lentgth
 limit <- 100L
