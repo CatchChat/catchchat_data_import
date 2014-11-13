@@ -79,3 +79,4 @@ c = AuthContractGenerator.new contracts_path: 'rails_api_contracts'
 c.token_by_login
 c.token_by_mobile
 c.send_verify_code
+c.register_new_user
