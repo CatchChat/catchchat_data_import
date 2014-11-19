@@ -52,7 +52,9 @@ shinyUI(pageWithSidebar(
         )
       ),
 
-      tabPanel("Created Time Filter","test")
+      tabPanel("Created Time Filter",
+        plotOutput("plotUserDaily") 
+      )
     ) 
   )
 ))

@@ -39,3 +39,15 @@ print(count)
 bson <- mongo.aggregation(mongo, "catch_chat.users", list(ag1, ag2))
 lresult <- mongo.bson.value(bson,"result")
 mresult <- sapply(result,function(x) return(c(x$'_id',x$count)))
+
+library(reshape2)
+
+df <- as.data.frame(t(mresult))
+colnames(df) <-c("day", "month", "new_user_count")
+
+df.long <-melt(df,id.vars=c("month","day"), measure.vars=c("new_user_count"))
+df.long<-transform(df.long,dat=as.Date(paste(day,month,sep="/"),"%d/%m"))
+df.long <- df.long[order(df$month,df$day),]
+plot(df.long$dat, df.long$value,type="b")
+#ggplot(df.long, aes(x = dat, y = value))
+
