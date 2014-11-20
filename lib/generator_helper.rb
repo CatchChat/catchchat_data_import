@@ -1,3 +1,4 @@
+require "addressable/uri"
 module GeneratorHelper
   def initialize(options)
     WebMock.allow_net_connect!
@@ -17,6 +18,7 @@ module GeneratorHelper
     end
     conn.send method, path do |req|
       req.headers['Content-Type'] = 'application/json'
+      req.headers['Accept-Language'] = 'en-US'
       # req.headers['X-CatchChatToken'] = encoded_auth_token
       # Below is only for node api
       # req.headers['X-CatchChatAuth'] = encoded_auth_password

@@ -7,7 +7,7 @@
     "path": "/api/v4/auth/token_by_mobile",
     "schema": {
       "$schema": "http://json-schema.org/draft-03/schema#",
-      "description": "Generated from http://localhost:3000/api/v4/auth/token_by_mobile with shasum 75f7b15007188b133ce383baf27f2d0c922b1975",
+      "description": "Generated from http://localhost:3000/api/v4/auth/token_by_mobile with shasum f0253663b61782e212fbc9d611afd1df88e8e236",
       "type": "object",
       "required": true,
       "properties": {
@@ -21,7 +21,7 @@
         },
         "expiring": {
           "type": "integer",
-          "required": false 
+          "required": true
         }
       }
     }
@@ -34,7 +34,7 @@
     "status": 200,
     "schema": {
       "$schema": "http://json-schema.org/draft-03/schema#",
-      "description": "Generated from http://localhost:3000/api/v4/auth/token_by_mobile with shasum 0308475538cc4cfb6c3546833bcb5a07ad681c7d",
+      "description": "Generated from http://localhost:3000/api/v4/auth/token_by_mobile with shasum f650e0182d05534bb80b48f4240b81272aa788aa",
       "type": "object",
       "required": true,
       "properties": {
@@ -57,10 +57,11 @@
         "headers": {
           "User-Agent": "Faraday v0.9.0",
           "Content-Type": "application/json",
+          "Accept-Language": "en-US",
           "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
-          "Accept": "application/json"
+          "Accept": "*/*"
         },
-        "body": "{\"login\":\"12345678\",\"password\":\"12345\",\"expiring\":500}"
+        "body": "{\"login\":\"12345678\",\"password\":\"ruanwztest\",\"expiring\":500}"
       },
       "response": {
         "status": 200,
@@ -69,19 +70,20 @@
           "X-Xss-Protection": "1; mode=block",
           "X-Content-Type-Options": "nosniff",
           "X-Ratelimit-Limit": "5000",
-          "X-Ratelimit-Remaining": "4990",
+          "X-Ratelimit-Remaining": "4939",
           "X-Ratelimit-Reset": "3600",
           "Content-Type": "application/json; charset=utf-8",
-          "Etag": "\"af8150171c093086b0ffd20d7dc04aca\"",
+          "Etag": "\"5b13071b71f28caeb511a5bef548477c\"",
           "Cache-Control": "max-age=0, private, must-revalidate",
-          "X-Request-Id": "65eaad1c-7c30-410f-bf46-3b47a6a01607",
-          "X-Runtime": "0.074201",
+          "X-Request-Id": "9f67aa3d-d01c-467b-be61-3000f2433b49",
+          "X-Runtime": "0.045476",
           "Server": "WEBrick/1.3.1 (Ruby/2.1.1/2014-02-24)",
-          "Date": "Fri, 07 Nov 2014 09:20:49 GMT",
-          "Content-Length": "77",
-          "Connection": "Keep-Alive"
+          "Date": "Thu, 20 Nov 2014 05:58:45 GMT",
+          "Content-Length": "76",
+          "Connection": "Keep-Alive",
+          "Set-Cookie": "_catchchat_server_session=V00vUk9PT1dEN3FwbzFVUy8zKzlncnRRQmVsOTd5VjBaSVFOKzNZVStkTWZEQ3JnMWM3aWl1T1A2NFgvUjhxc3J1dm12cTJPKzVFU3dEeGZ2ZUVXbUZxVjNMNkxXNVFqVVdFbm1qRkFuSGRpaWVuUWMvN3ZWOWlLNTBjS0ZVeW1rTnFmNitLWk00WFdyTE9aVmxqcFJ3PT0tLUtwR3NIbGR6bUpGVWZYVy8zS3UwNkE9PQ%3D%3D--723434cf22a9f8629c8b28ad2a4d99c4150fcafe; path=/; HttpOnly"
         },
-        "body": "{\"mobile\":\"12345678\",\"access_token\":\"Rub4GyD73FTmzSihY7zv1415352049.2437882\"}"
+        "body": "{\"mobile\":\"12345678\",\"access_token\":\"-mZD9K_xbafY2jv_iiiJ1416463125.481381\"}"
       }
     }
   },

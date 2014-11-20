@@ -4,7 +4,7 @@ require 'faraday'
 require 'pry'
 
 require_relative 'generator_helper'
-require_relative 'attachment_contract_generator'
+require_relative 'node_attachment_contract_generator'
 require_relative 'message_contract_generator'
 require_relative 'user_contract_generator'
 #   # Friends
@@ -93,3 +93,4 @@ c.get_avatar_token
 c.get_url
 c.token
 #c.qiniu_token what request parameters needed?
+

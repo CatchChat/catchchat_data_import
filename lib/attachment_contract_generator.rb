@@ -14,45 +14,34 @@ require 'pry'
 class AttachmentContractGenerator
   include GeneratorHelper
 
-
-  def get_avatar_url
-    # POST /attachments/get_avatar_url
-    json_data = {
-      key: 'ruanwztest2',
-    }.to_json
-    response = send_request(:post, 'https://chat.catch.la', '/v2/attachments/get_avatar_url', json_data)
+  def upload_token_qiniu
+    uri = Addressable::URI.new
+    uri.query_values =  {
+      bucket: 'ruanwz-public',
+      key: 'thisisauuidkeyforfile'
+    }
+    # qiniu
+    send_request(:get, 'http://localhost:3000', '/api/v4/attachments/upload_token/qiniu?'+uri.query)
   end
 
-  def get_avatar_token
-    # POST /attachments/avatar_token
-    json_data = {
-      key: 'ruanwztest2',
-    }.to_json
-    response = send_request(:post, 'https://chat.catch.la', '/v2/attachments/avatar_token', json_data)
+  def upload_token_upyun
+
+    uri = Addressable::URI.new
+    uri.query_values =  {
+      bucket: 'ruanwz-public',
+      file_path: '/thisisauuidkeyforfilewithrootpath',
+      file_length: 222
+    }
+    send_request(:get, 'http://localhost:3000', '/api/v4/attachments/upload_token/upyun?'+ uri.query)
   end
 
-  #'POST /v2/attachments/get_url': 'v2/Attachment.get_url'
-  def get_url
-    json_data = {
-      key: 'ruanwztest2',
-    }.to_json
-    response = send_request(:post, 'https://chat.catch.la', '/v2/attachments/get_url', json_data)
-  end
-
-  def token
-    json_data = {
-      key: 'ruanwztest2',
-    }.to_json
-    response = send_request(:post, 'https://chat.catch.la', '/v2/attachments/token', json_data)
-  end
-
-  def qiniu_token
-    json_data = {
-      callbackBody: 'test body',
-      filename: 'test.jpg'
-
-    }.to_json
-    response = send_request(:post, 'https://chat.catch.la', '/v2/attachments/token_callback', json_data)
+  def upload_fields
+    uri = Addressable::URI.new
+    uri.query_values =  {
+      bucket: 'ruanwz-public',
+      key: 'thisisauuidkeyforfile'
+    }
+    send_request(:get, 'http://localhost:3000', '/api/v4/attachments/upload_fields/s3?'+uri.query)
   end
 
 end

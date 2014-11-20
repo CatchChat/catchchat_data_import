@@ -5,6 +5,7 @@ require 'pry'
 
 require_relative 'generator_helper'
 require_relative 'auth_contract_generator'
+require_relative 'attachment_contract_generator'
 #   # Friends
 #   'POST /v2/users/friends': 'v2/Friend.list'
 #   'POST /v2/users/add_friend': 'v2/Friend.add_friend'
@@ -81,3 +82,7 @@ c.token_by_mobile
 c.send_verify_code
 c.register_new_user
 c.verify_user_register_sms_token
+c = AttachmentContractGenerator.new contracts_path: 'rails_api_contracts'
+c.upload_token_qiniu
+c.upload_token_upyun
+c.upload_fields

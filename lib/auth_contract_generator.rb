@@ -18,7 +18,7 @@ class AuthContractGenerator
 
   def token_by_mobile
     username = '12345678'
-    password = '12345'
+    password = 'ruanwztest'
     expiring = 500
     json_data = {login: username, password: password, expiring: expiring}.to_json
     send_request(:post, 'http://localhost:3000', '/api/v4/auth/token_by_mobile', json_data)
@@ -27,7 +27,7 @@ class AuthContractGenerator
   def send_verify_code
     username = '12345678'
     expiring = 500
-    json_data = {login: username, expiring: expiring}.to_json
+    json_data = {mobile: username, expiring: expiring}.to_json
     send_request(:post, 'http://localhost:3000', '/api/v4/auth/send_verify_code', json_data)
   end
 
