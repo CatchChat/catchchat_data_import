@@ -25,7 +25,6 @@
   "response": {
     "headers": {
       "Content-Type": "application/json; charset=utf-8",
-      "Etag": "\"5e76ab17d9f9130dc6247446130ddf0f\"",
       "Cache-Control": "max-age=0, private, must-revalidate"
     },
     "status": 200,
@@ -69,7 +68,6 @@
           "X-Ratelimit-Remaining": "4986",
           "X-Ratelimit-Reset": "3600",
           "Content-Type": "application/json; charset=utf-8",
-          "Etag": "\"5e76ab17d9f9130dc6247446130ddf0f\"",
           "Cache-Control": "max-age=0, private, must-revalidate",
           "X-Request-Id": "63e378f1-cf47-4c52-9028-4e4102d076d7",
           "X-Runtime": "3.922016",

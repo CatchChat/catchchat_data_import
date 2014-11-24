@@ -10,7 +10,7 @@ describe 'rails api auth contract' do
   end
 
   it 'validate auth contracts' do
-    contracts = Pacto.load_contracts('rails_api_contracts/localhost/api/v4/auth', 'http://localhost:3000')
+    contracts = Pacto.load_contracts('rails_api_contracts/localhost/api/v4/auth', 'http://staging.catchchat-server.me:80')
     result = contracts.simulate_consumers
     result.entries.each do |entry|
       puts result unless entry.successful?
